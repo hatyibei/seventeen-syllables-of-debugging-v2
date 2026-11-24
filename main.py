@@ -16,7 +16,11 @@ def main():
     here = os.path.dirname(os.path.abspath(__file__))
     src = os.path.join(here, ENTRY_NAME)
     dst = os.path.join(out_dir, ENTRY_NAME)
-    shutil.copyfile(src, dst)
+    with open(src, "rb") as fin:
+        payload = fin.read()
+    with open(dst, "wb") as fout:
+        fout.write(payload)
+    print(f"wrote {dst} ({len(payload)} bytes)")
 
 
 if __name__ == "__main__":
