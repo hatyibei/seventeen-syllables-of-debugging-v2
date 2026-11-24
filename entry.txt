@@ -1,0 +1,3 @@
+Cursor blinks at three
+The breakpoint never once fires
+It was my typo
